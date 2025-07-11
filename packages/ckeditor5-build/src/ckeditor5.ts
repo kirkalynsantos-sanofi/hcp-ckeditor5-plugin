@@ -9,6 +9,7 @@ import { AutoLink, Link } from '@ckeditor/ckeditor5-link';
 import { Table, TableToolbar, TableColumnResize, TableUtils, TableProperties, TableCellProperties } from '@ckeditor/ckeditor5-table';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
+import { Clipboard } from 'ckeditor5/src/clipboard';
 
 import './mgnl-css-framework-compatible.css';
 
@@ -28,6 +29,7 @@ const BUILTIN_PLUGINS = [
 	TableUtils,
 	TableProperties,
 	TableCellProperties,
+	Clipboard,
 	PasteFromOffice
 ];
 
@@ -49,10 +51,28 @@ const DEFAULT_CONFIG: EditorConfig = {
 		'mgnlPagesLink',
 		'|',
 		'clipboard',
+		'pastetools',
+		'pastetext',
+		'pastefromword',
 		'|',
 		'undo',
-		'redo'
+		'redo',
+		'|',
+		'fullscreen'
 	],
+	heading: {
+		options: [
+			{ model: 'paragraph', title: 'Normal', class: 'ck-heading_paragraph' },
+			{ model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+			{ model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+			{ model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+			{ model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+			{ model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+			{ model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
+			{ model: 'headingLegal', view: { name: 'p', classes: 'legal-text' }, title: 'Legal', class: 'ck-heading_legal' },
+			{ model: 'headingSmall', view: { name: 'p', classes: 'small-text' }, title: 'Small', class: 'ck-heading_small' }
+		]
+	},
 	table: {
 		contentToolbar: [
 			'tableColumn',
