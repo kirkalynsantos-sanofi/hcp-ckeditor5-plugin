@@ -142,11 +142,6 @@ class ClassicEditor extends CkEditor5ClassicEditor {
 	public static override defaultConfig = DEFAULT_CONFIG;
 };
 
-class SanofiDefaultEditor extends CkEditor5ClassicEditor {
-	public static override builtinPlugins = BUILTIN_PLUGINS;
-	public static override defaultConfig = DEFAULT_CONFIG;
-};
-
 // Export the editor for CKEditor 5 to use in your project.
 // The exported editors could be retrieved by CKEDITOR5["ClassicEditor"] or CKEDITOR5["InlineEditor"] respectively.
 export default { ClassicEditor };
