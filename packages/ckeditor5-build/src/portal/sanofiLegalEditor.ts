@@ -8,11 +8,9 @@ import { List } from '@ckeditor/ckeditor5-list';
 import { AutoLink, Link } from '@ckeditor/ckeditor5-link';
 import { Table, TableToolbar, TableColumnResize, TableUtils, TableProperties, TableCellProperties } from '@ckeditor/ckeditor5-table';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
-import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
 import { Clipboard } from 'ckeditor5/src/clipboard';
-import { SanofiLegalEditor } from './portal/sanofiLegalEditor';
 
-import './mgnl-css-framework-compatible.css';
+import './../mgnl-css-framework-compatible.css';
 
 const BUILTIN_PLUGINS = [
 	Essentials,
@@ -23,7 +21,6 @@ const BUILTIN_PLUGINS = [
 	Superscript,
 	List,
 	AutoLink, Link,
-	MgnlLink, MgnlImageInsert,
 	Table,
 	TableToolbar,
 	TableColumnResize,
@@ -45,11 +42,8 @@ const DEFAULT_CONFIG: EditorConfig = {
 		'|',
 		'numberedList',
 		'bulletedList',
-		'insertTable',
 		'|',
 		'link',
-		'mgnlAssetsLink',
-		'mgnlPagesLink',
 		'|',
 		'clipboard',
 		'pastetools',
@@ -59,7 +53,9 @@ const DEFAULT_CONFIG: EditorConfig = {
 		'undo',
 		'redo',
 		'|',
-		'fullscreen'
+		'fullscreen',
+		'|',
+		'insertTable'
 	],
 	heading: {
 		options: [
@@ -97,12 +93,7 @@ const DEFAULT_CONFIG: EditorConfig = {
 	}
 };
 
-class ClassicEditor extends CkEditor5ClassicEditor {
+export class SanofiLegalEditor extends CkEditor5ClassicEditor {
 	public static override builtinPlugins = BUILTIN_PLUGINS;
 	public static override defaultConfig = DEFAULT_CONFIG;
 }
-
-export default { 
-	ClassicEditor, 
-	SanofiLegalEditor 
-};
