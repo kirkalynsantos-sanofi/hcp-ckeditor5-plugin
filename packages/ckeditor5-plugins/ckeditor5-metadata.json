@@ -1,0 +1,22 @@
+{
+  "plugins": [
+    {
+      "name": "MgnlLink",
+      "className": "MgnlLink",
+      "description": "Adds link to Magnolia resources to the editor.",
+      "path": "src/mgnllink/mgnllink.ts",
+      "uiComponents": [
+        {
+          "name": "mgnlAssetsLinkButton",
+          "type": "Button",
+          "iconPath": "theme/icons/link-assets.svg"
+        },
+        {
+          "name": "mgnlPagesLinkButton",
+          "type": "Button",
+          "iconPath": "theme/icons/link-pages.svg"
+        }
+      ]
+    }
+  ]
+}

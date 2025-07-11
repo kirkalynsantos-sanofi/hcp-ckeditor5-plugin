@@ -1,0 +1,9 @@
+node_modules
+node
+pom.xml
+Jenkinsfile
+.idea
+.editorconfig
+.gitattributes
+packages/ckeditor5-build/src
+packages/ckeditor5-plugins/src

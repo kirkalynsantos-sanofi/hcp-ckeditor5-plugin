@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "es2020"
+    ],
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "strict": true,
+    "module": "es6",
+    "target": "es2020",
+    "sourceMap": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "typings",
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "./sample",
+    "./src",
+    "./tests",
+    "./typings"
+  ]
+}

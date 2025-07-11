@@ -1,0 +1,27 @@
+{
+    "name": "@magnolia/ckeditor5-integration",
+    "version": "1.0.0-SNAPSHOT",
+    "description": "Magnolia CKEditor 5 plugins enable editors to link pages and assets from Magnolia into rich text content, as well as to embed assets.",
+    "private": true,
+    "workspaces": [
+        "packages/ckeditor5-plugins",
+        "packages/ckeditor5-build"
+    ],
+    "scripts": {
+        "build": "npm run build -workspaces",
+        "test": "npm run test -workspaces --if-present",
+        "start": "npm run start -workspace packages/ckeditor5-build"
+    },
+    "license": "GPL-3.0",
+    "author": "Magnolia International Ltd.",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.magnolia-platform.com/pd/platform/ckeditor5-plugins.git"
+    },
+    "homepage": "https://docs.magnolia-cms.com/product-docs/6.3/developing/templating/dialog-definition/field-definition/list-of-fields/ckeditor5-customization/",
+    "devDependencies": {
+        "@types/lodash-es": "^4.17.12",
+        "@types/lodash.merge": "^4.6.9",
+        "lerna": "^8.1.2"
+    }
+}

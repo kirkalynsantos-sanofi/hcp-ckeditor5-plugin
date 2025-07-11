@@ -1,0 +1,49 @@
+/*
+ * Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+@import "@ckeditor/ckeditor5-ui/theme/mixins/_rwd.css";
+
+.ck.ck-link-actions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+	& .ck-link-actions__preview {
+		display: inline-block;
+
+		& .ck-button__label {
+			overflow: hidden;
+		}
+	}
+
+	@mixin ck-media-phone {
+		flex-wrap: wrap;
+
+		& .ck-link-actions__preview {
+			flex-basis: 100%;
+		}
+
+		& .ck-button:not(.ck-link-actions__preview) {
+			flex-basis: 50%;
+		}
+	}
+
+	.ck.ck-labeled-field-view>.ck.ck-labeled-field-view__input-wrapper>.ck.ck-label {
+		background-color: var(--ck-color-labeled-field-label-background);
+		background-image: linear-gradient(to right, var(--ck-color-input-disabled-background), var(--ck-color-input-disabled-background));
+		background-size: 100% 50%;
+		background-position: center bottom;
+		background-repeat: no-repeat;
+	}
+
+	.ck.mgnl-link-actions-view.ck-labeled-field-view-parent div {
+		margin-top: 10px;
+	}
+
+	.ck.mgnl-link-actions-view.ck-button-view-parent {
+        display: flex;
+		align-items: flex-end;
+    }
+}

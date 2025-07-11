@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>info.magnolia.maven.poms</groupId>
+		<artifactId>magnolia-parent-pom-community</artifactId>
+		<version>61</version>
+	</parent>
+
+	<groupId>info.magnolia.ui</groupId>
+	<artifactId>magnolia-ckeditor5-integration</artifactId>
+	<!-- pom.xml and package.json versions will diverge due to the fact that 1.0-SNAPSHOT (Maven permanent snapshot)
+	is an invalid version in the npm world. This is no issue, as long as the versions match upon releasing the module
+	both on Nexus and npmjs repositories -->
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<javaVersion>17</javaVersion>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<scmTagPrefix>magnolia-ckeditor5-integration</scmTagPrefix>
+		<magnoliaLicenseStyle>dual</magnoliaLicenseStyle>
+
+		<frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
+		<node.version>20.12.0</node.version>
+	</properties>
+
+	<issueManagement>
+		<system>Jira</system>
+		<url>https://jira.magnolia-cms.com/browse/MGNLCKE</url>
+	</issueManagement>
+
+	<scm>
+		<connection>scm:git:ssh://git@git.magnolia-cms.com/PLATFORM/ckeditor5-plugins</connection>
+		<developerConnection>scm:git:ssh://git@git.magnolia-cms.com/PLATFORM/ckeditor5-plugins</developerConnection>
+		<url>https://git.magnolia-cms.com/projects/PLATFORM/repos/ckeditor5-plugins</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>${frontend-maven-plugin.version}</version>
+				<configuration>
+					<nodeVersion>v${node.version}</nodeVersion>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>npm build -workspaces</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run build -workspaces</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<!-- what ends up in the final jar -->
+		<resources>
+			<resource>
+				<directory>packages/ckeditor5-build/build</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+	</build>
+
+	<distributionManagement>
+		<site>
+			<id>${distribSiteId}</id>
+			<url>${distribSiteRoot}/ui/${project.version}</url>
+		</site>
+	</distributionManagement>
+
+</project>

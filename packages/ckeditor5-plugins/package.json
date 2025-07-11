@@ -1,0 +1,83 @@
+{
+  "name": "@magnolia/ckeditor5-plugins",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Magnolia CKEditor 5 plugins enable editors to link pages and assets from Magnolia into rich text content, as well as to embed assets.",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.magnolia-platform.com/pd/platform/ckeditor5-plugins.git"
+  },
+  "homepage": "https://docs.magnolia-cms.com/product-docs/6.3/developing/templating/dialog-definition/field-definition/list-of-fields/ckeditor5-customization/",
+  "author": "Magnolia International Ltd.",
+  "license": "GPL-3.0",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-dll",
+    "ckeditor5-package-generator"
+  ],
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "lang",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "theme",
+    "build",
+    "ckeditor5-metadata.json"
+  ],
+  "dependencies": {
+    "@magnolia/magnolia-build": "^0.5.3"
+  },
+  "devDependencies": {
+    "@ckeditor/ckeditor5-link": ">=41.1.0",
+    "@ckeditor/ckeditor5-theme-lark": ">=41.1.0",
+    "@ckeditor/ckeditor5-package-tools": ">=1.1.0",
+    "@typescript-eslint/eslint-plugin": "~5.43.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "ckeditor5": ">=41.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-ckeditor5": ">=5.3.0",
+    "http-server": "^14.1.0",
+    "lint-staged": "^10.2.6",
+    "stylelint": "^16.2.1",
+    "stylelint-config-ckeditor5": ">=5.3.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "lodash-es": "4.17.21"
+  },
+  "peerDependencies": {
+    "ckeditor5": ">=41.1.0"
+  },
+  "scripts": {
+    "ts:build": "tsc -p ./tsconfig.release.json",
+    "ts:clear": "npx rimraf \"src/**/*.@(js|d.ts)\"",
+    "dll:build": "ckeditor5-package-tools dll:build",
+    "dll:serve": "http-server ./ -o sample/dll.html",
+    "lint": "eslint \"**/*.{js,ts}\" --quiet",
+    "start": "ckeditor5-package-tools start",
+    "stylelint": "stylelint --quiet --allow-empty-input 'theme/**/*.css'",
+    "test": "",
+    "build": "npm run ts:build && ckeditor5-package-tools export-package-as-javascript",
+    "prepare": "",
+    "prepublishOnly": "npm run ts:build && ckeditor5-package-tools export-package-as-javascript",
+    "postpublish": "npm run ts:clear && ckeditor5-package-tools export-package-as-typescript",
+    "translations:collect": "ckeditor5-package-tools translations:collect",
+    "translations:download": "ckeditor5-package-tools translations:download",
+    "translations:upload": "ckeditor5-package-tools translations:upload"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "eslint --quiet"
+    ],
+    "**/*.css": [
+      "stylelint --quiet --allow-empty-input"
+    ]
+  }
+}

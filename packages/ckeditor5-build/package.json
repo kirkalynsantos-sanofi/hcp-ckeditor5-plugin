@@ -1,0 +1,55 @@
+{
+    "name": "@magnolia/ckeditor5-build",
+    "version": "1.0.0-SNAPSHOT",
+    "description": "Magnolia CKEditor 5 plugins enable editors to link pages and assets from Magnolia into rich text content, as well as to embed assets.",
+    "main": "./build/ckeditor5.js",
+    "types": "./build/ckeditor5.d.ts",
+    "files": [
+        "build",
+        "src"
+    ],
+    "author": "Magnolia International Ltd.",
+    "license": "GPL-3.0",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.magnolia-platform.com/pd/platform/ckeditor5-plugins.git"
+    },
+    "homepage": "https://docs.magnolia-cms.com/product-docs/6.3/developing/templating/dialog-definition/field-definition/list-of-fields/ckeditor5-customization/",
+    "dependencies": {
+        "@ckeditor/ckeditor5-alignment": "^41.2.1",
+        "@ckeditor/ckeditor5-basic-styles": "^41.2.1",
+        "@ckeditor/ckeditor5-editor-classic": "^41.2.1",
+        "@ckeditor/ckeditor5-essentials": "^41.2.1",
+        "@ckeditor/ckeditor5-font": "^41.2.1",
+        "@ckeditor/ckeditor5-heading": "^41.2.1",
+        "@ckeditor/ckeditor5-link": "^41.2.1",
+        "@ckeditor/ckeditor5-list": "^41.2.1",
+        "@ckeditor/ckeditor5-special-characters": "^41.2.1",
+        "@ckeditor/ckeditor5-image": "^41.2.1",
+        "@ckeditor/ckeditor5-source-editing": "^41.2.1",
+        "@ckeditor/ckeditor5-table": "^41.2.1",
+        "@ckeditor/ckeditor5-paste-from-office": "^41.2.1",
+        "@ckeditor/ckeditor5-html-support": "^41.2.1"
+    },
+    "devDependencies": {
+        "@ckeditor/ckeditor5-core": "^41.2.1",
+        "@ckeditor/ckeditor5-dev-utils": "^39.6.3",
+        "@ckeditor/ckeditor5-theme-lark": "^41.2.1",
+        "@magnolia/ckeditor5-plugins": "1.0.0-SNAPSHOT",
+        "postcss": "^8.4.36",
+        "postcss-loader": "^4.3.0",
+        "raw-loader": "^4.0.2",
+        "serve": "^14.2.1",
+        "style-loader": "^2.0.0",
+        "terser-webpack-plugin": "^4.2.3",
+        "ts-loader": "~8.2.0",
+        "typescript": "5.0.4",
+        "webpack": "^5.58.0",
+        "webpack-cli": "^4.10.0"
+    },
+    "scripts": {
+        "build": "webpack --mode production",
+        "postbuild": "tsc --declaration --declarationDir build --stripInternal --emitDeclarationOnly",
+        "start": "webpack serve --mode development"
+    }
+}

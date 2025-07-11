@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "^@ckeditor/ckeditor5-alignment$",
+        "^@ckeditor/ckeditor5-basic-styles$",
+        "^@ckeditor/ckeditor5-editor-classic$",
+        "^@ckeditor/ckeditor5-essentials$",
+        "^@ckeditor/ckeditor5-font$",
+        "^@ckeditor/ckeditor5-heading$",
+        "^@ckeditor/ckeditor5-link$",
+        "^@ckeditor/ckeditor5-list$",
+        "^@ckeditor/ckeditor5-special-characters$",
+        "^@ckeditor/ckeditor5-image$",
+        "^@ckeditor/ckeditor5-source-editing$",
+        "^@ckeditor/ckeditor5-table$",
+        "^@ckeditor/ckeditor5-core$",
+        "^@ckeditor/ckeditor5-theme-lark$"
+      ],
+      "allowedVersions": "<42.0.0"
+    }
+  ]
+}

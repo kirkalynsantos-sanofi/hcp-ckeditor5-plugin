@@ -1,0 +1,11 @@
+build/
+coverage/
+node_modules/
+tmp/
+target/
+node/
+.idea/
+
+# Ignore compiled TypeScript files.
+packages/*/src/**/*.js
+packages/*/src/**/*.d.ts
