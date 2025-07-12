@@ -5,9 +5,9 @@ import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Bold } from '@ckeditor/ckeditor5-basic-styles';
 import { List } from '@ckeditor/ckeditor5-list';
 import { AutoLink, Link } from '@ckeditor/ckeditor5-link';
+import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
 
 import './../mgnl-css-framework-compatible.css';
-import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
 
 const BUILTIN_PLUGINS = [
 	Essentials,
@@ -45,7 +45,7 @@ const DEFAULT_CONFIG: EditorConfig = {
 	}
 };
 
-export class SanofiLegalEditor extends CkEditor5ClassicEditor {
+export class RichTextProductCatalogDescriptionEditor extends CkEditor5ClassicEditor {
 	public static override builtinPlugins = BUILTIN_PLUGINS;
 	public static override defaultConfig = DEFAULT_CONFIG;
 }

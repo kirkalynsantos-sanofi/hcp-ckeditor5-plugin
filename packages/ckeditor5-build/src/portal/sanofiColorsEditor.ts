@@ -10,6 +10,7 @@ import { Table, TableToolbar, TableColumnResize, TableUtils, TableProperties, Ta
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
 import { Clipboard } from 'ckeditor5/src/clipboard';
+import { FontColor } from '@ckeditor/ckeditor5-font';
 import {
 	Image,
 	ImageCaption,
@@ -21,8 +22,7 @@ import {
 } from '@ckeditor/ckeditor5-image';
 
 
-import './mgnl-css-framework-compatible.css';
-import { FontColor } from '@ckeditor/ckeditor5-font';
+import './../mgnl-css-framework-compatible.css';
 
 const BUILTIN_PLUGINS = [
 	Essentials,

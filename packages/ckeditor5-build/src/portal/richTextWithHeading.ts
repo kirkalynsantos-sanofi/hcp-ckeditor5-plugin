@@ -4,9 +4,9 @@ import type { EditorConfig } from 'ckeditor5/src/core';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import { Superscript } from '@ckeditor/ckeditor5-basic-styles';
+import { SourceEditing } from '@ckeditor/ckeditor5-source-editing';
 
 import './../mgnl-css-framework-compatible.css';
-import { SourceEditing } from '@ckeditor/ckeditor5-source-editing';
 
 const BUILTIN_PLUGINS = [
 	Essentials,

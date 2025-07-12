@@ -11,13 +11,13 @@ import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
 import { Clipboard } from 'ckeditor5/src/clipboard';
 import { SanofiLegalEditor } from './portal/sanofiLegalEditor';
+import { SanofiColorsEditor } from './portal/sanofiColorsEditor';
+import { RichTextWithHeadingEditor } from './portal/richTextWithHeading';
 import { RichTextForTitleEditor } from './portal/richTextForTitleEditor';
 import { RichTextWithSuperscriptEditor } from './portal/richTextWithSuperscript';
 import { RichTextProductCatalogDescriptionEditor } from './portal/richTextProductCatalogDescriptionEditor';
 
 import './mgnl-css-framework-compatible.css';
-import { SanofiColorsEditor } from './portal/sanofiColorsEditor';
-import { RichTextWithHeadingEditor } from './portal/richTextWithHeading';
 
 const BUILTIN_PLUGINS = [
 	Essentials,

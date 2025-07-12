@@ -2,9 +2,9 @@ import { ClassicEditor as CkEditor5ClassicEditor } from '@ckeditor/ckeditor5-edi
 import type { EditorConfig } from 'ckeditor5/src/core';
 
 import { Superscript } from '@ckeditor/ckeditor5-basic-styles';
+import { Essentials } from '@ckeditor/ckeditor5-essentials';
 
 import './../mgnl-css-framework-compatible.css';
-import { Essentials } from '@ckeditor/ckeditor5-essentials';
 
 const BUILTIN_PLUGINS = [
     Essentials,
