@@ -12,9 +12,10 @@ import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
 import { Clipboard } from 'ckeditor5/src/clipboard';
 import { SanofiLegalEditor } from './portal/sanofiLegalEditor';
 import { RichTextForTitleEditor } from './portal/richTextForTitleEditor';
+import { RichTextWithSuperscriptEditor } from './portal/richTextWithSuperscript';
+import { RichTextProductCatalogDescriptionEditor } from './portal/richTextProductCatalogDescriptionEditor';
 
 import './mgnl-css-framework-compatible.css';
-import { RichTextWithSuperscriptEditor } from './portal/richTextWithSuperscript';
 
 const BUILTIN_PLUGINS = [
 	Essentials,
@@ -108,5 +109,6 @@ export default {
 	ClassicEditor, 
 	SanofiLegalEditor,
 	RichTextForTitleEditor,
-	RichTextWithSuperscriptEditor
+	RichTextWithSuperscriptEditor,
+	RichTextProductCatalogDescriptionEditor
 };
