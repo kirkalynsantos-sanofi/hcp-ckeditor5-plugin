@@ -11,8 +11,10 @@ import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
 import { Clipboard } from 'ckeditor5/src/clipboard';
 import { SanofiLegalEditor } from './portal/sanofiLegalEditor';
+import { RichTextForTitleEditor } from './portal/richTextForTitleEditor';
 
 import './mgnl-css-framework-compatible.css';
+import { RichTextWithSuperscriptEditor } from './portal/richTextWithSuperscript';
 
 const BUILTIN_PLUGINS = [
 	Essentials,
@@ -104,5 +106,7 @@ class ClassicEditor extends CkEditor5ClassicEditor {
 
 export default { 
 	ClassicEditor, 
-	SanofiLegalEditor 
+	SanofiLegalEditor,
+	RichTextForTitleEditor,
+	RichTextWithSuperscriptEditor
 };

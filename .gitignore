@@ -9,3 +9,5 @@ node/
 # Ignore compiled TypeScript files.
 packages/*/src/**/*.js
 packages/*/src/**/*.d.ts
+
+.DS_Store
