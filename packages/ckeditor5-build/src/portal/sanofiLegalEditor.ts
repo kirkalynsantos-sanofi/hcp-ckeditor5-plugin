@@ -9,6 +9,7 @@ import { AutoLink, Link } from '@ckeditor/ckeditor5-link';
 import { Table, TableToolbar, TableColumnResize, TableUtils, TableProperties, TableCellProperties } from '@ckeditor/ckeditor5-table';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { Clipboard } from 'ckeditor5/src/clipboard';
+import { WordCount } from '@ckeditor/ckeditor5-word-count'
 
 import './../mgnl-css-framework-compatible.css';
 
@@ -28,7 +29,8 @@ const BUILTIN_PLUGINS = [
 	TableProperties,
 	TableCellProperties,
 	Clipboard,
-	PasteFromOffice
+	PasteFromOffice,
+	WordCount
 ];
 
 const DEFAULT_CONFIG: EditorConfig = {
@@ -89,6 +91,12 @@ const DEFAULT_CONFIG: EditorConfig = {
 					target: '_blank'
 				}
 			}
+		}
+	},
+	wordCount: {
+		onUpdate: stats => {
+			// Prints the current content statistics.
+			console.log( `Characters: ${ stats.characters }\nWords: ${ stats.words }` );
 		}
 	}
 };

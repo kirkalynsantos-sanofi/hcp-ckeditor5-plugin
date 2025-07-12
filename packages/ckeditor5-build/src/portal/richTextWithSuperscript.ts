@@ -5,6 +5,7 @@ import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import { Superscript } from '@ckeditor/ckeditor5-basic-styles';
 import { Table, TableToolbar, TableColumnResize, TableUtils, TableProperties, TableCellProperties } from '@ckeditor/ckeditor5-table';
+import { WordCount } from '@ckeditor/ckeditor5-word-count'
 
 import './../mgnl-css-framework-compatible.css';
 
@@ -18,6 +19,7 @@ const BUILTIN_PLUGINS = [
 	TableUtils,
 	TableProperties,
 	TableCellProperties,
+    WordCount
 ];
 
 const DEFAULT_CONFIG: EditorConfig = {
@@ -43,6 +45,12 @@ const DEFAULT_CONFIG: EditorConfig = {
 			'tableProperties'
 		]
 	},
+    wordCount: {
+        onUpdate: stats => {
+            // Prints the current content statistics.
+            console.log( `Characters: ${ stats.characters }\nWords: ${ stats.words }` );
+        }
+    }
 };
 
 export class RichTextWithSuperscriptEditor extends CkEditor5ClassicEditor {

@@ -5,6 +5,7 @@ import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import { Superscript } from '@ckeditor/ckeditor5-basic-styles';
 import { SourceEditing } from '@ckeditor/ckeditor5-source-editing';
+import { WordCount } from '@ckeditor/ckeditor5-word-count'
 
 import './../mgnl-css-framework-compatible.css';
 
@@ -12,7 +13,8 @@ const BUILTIN_PLUGINS = [
 	Essentials,
 	Heading,
 	Superscript,
-    SourceEditing
+    SourceEditing,
+    WordCount
 ];
 
 const DEFAULT_CONFIG: EditorConfig = {
@@ -32,7 +34,13 @@ const DEFAULT_CONFIG: EditorConfig = {
 			{ model: 'headingLegal', view: { name: 'p', classes: 'legal-text' }, title: 'Legal', class: 'ck-heading_legal' },
 			{ model: 'headingSmall', view: { name: 'p', classes: 'small-text' }, title: 'Small', class: 'ck-heading_small' }
 		]
-	}
+	},
+    wordCount: {
+        onUpdate: stats => {
+            // Prints the current content statistics.
+            console.log( `Characters: ${ stats.characters }\nWords: ${ stats.words }` );
+        }
+    }
 };
 
 export class RichTextWithHeadingEditor extends CkEditor5ClassicEditor {
