@@ -17,6 +17,7 @@ import { RichTextProductCatalogDescriptionEditor } from './portal/richTextProduc
 
 import './mgnl-css-framework-compatible.css';
 import { SanofiColorsEditor } from './portal/sanofiColorsEditor';
+import { RichTextWithHeadingEditor } from './portal/richTextWithHeading';
 
 const BUILTIN_PLUGINS = [
 	Essentials,
@@ -111,6 +112,7 @@ export default {
 	SanofiLegalEditor,
 	SanofiColorsEditor,
 	RichTextForTitleEditor,
+	RichTextWithHeadingEditor,
 	RichTextWithSuperscriptEditor,
 	RichTextProductCatalogDescriptionEditor
 };
