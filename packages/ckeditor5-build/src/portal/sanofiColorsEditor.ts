@@ -5,18 +5,24 @@ import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import { Bold, Italic, Superscript, Underline } from '@ckeditor/ckeditor5-basic-styles';
 import { List } from '@ckeditor/ckeditor5-list';
-import { AutoLink, Link } from '@ckeditor/ckeditor5-link';
+import { AutoLink, Link, LinkImage } from '@ckeditor/ckeditor5-link';
 import { Table, TableToolbar, TableColumnResize, TableUtils, TableProperties, TableCellProperties } from '@ckeditor/ckeditor5-table';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { MgnlImageInsert, MgnlLink } from '@magnolia/ckeditor5-plugins';
 import { Clipboard } from 'ckeditor5/src/clipboard';
-import { SanofiLegalEditor } from './portal/sanofiLegalEditor';
-import { RichTextForTitleEditor } from './portal/richTextForTitleEditor';
-import { RichTextWithSuperscriptEditor } from './portal/richTextWithSuperscript';
-import { RichTextProductCatalogDescriptionEditor } from './portal/richTextProductCatalogDescriptionEditor';
+import {
+	Image,
+	ImageCaption,
+	ImageInsert,
+	ImageResize,
+	ImageStyle,
+	ImageTextAlternative,
+	ImageToolbar
+} from '@ckeditor/ckeditor5-image';
+
 
 import './mgnl-css-framework-compatible.css';
-import { SanofiColorsEditor } from './portal/sanofiColorsEditor';
+import { FontColor } from '@ckeditor/ckeditor5-font';
 
 const BUILTIN_PLUGINS = [
 	Essentials,
@@ -27,6 +33,7 @@ const BUILTIN_PLUGINS = [
 	Superscript,
 	List,
 	AutoLink, Link,
+    Image, ImageToolbar, ImageCaption, ImageStyle, ImageResize, LinkImage, ImageInsert, ImageTextAlternative,
 	MgnlLink, MgnlImageInsert,
 	Table,
 	TableToolbar,
@@ -35,7 +42,9 @@ const BUILTIN_PLUGINS = [
 	TableProperties,
 	TableCellProperties,
 	Clipboard,
-	PasteFromOffice
+	PasteFromOffice,
+    Image,
+    FontColor,
 ];
 
 const DEFAULT_CONFIG: EditorConfig = {
@@ -49,12 +58,15 @@ const DEFAULT_CONFIG: EditorConfig = {
 		'|',
 		'numberedList',
 		'bulletedList',
+        'insertImage',
 		'insertTable',
 		'|',
 		'link',
 		'mgnlAssetsLink',
 		'mgnlPagesLink',
 		'|',
+        'fontColor',
+        '|',
 		'clipboard',
 		'pastetools',
 		'pastetext',
@@ -101,16 +113,7 @@ const DEFAULT_CONFIG: EditorConfig = {
 	}
 };
 
-class ClassicEditor extends CkEditor5ClassicEditor {
+export class SanofiColorsEditor extends CkEditor5ClassicEditor {
 	public static override builtinPlugins = BUILTIN_PLUGINS;
 	public static override defaultConfig = DEFAULT_CONFIG;
 }
-
-export default { 
-	ClassicEditor, 
-	SanofiLegalEditor,
-	SanofiColorsEditor,
-	RichTextForTitleEditor,
-	RichTextWithSuperscriptEditor,
-	RichTextProductCatalogDescriptionEditor
-};
