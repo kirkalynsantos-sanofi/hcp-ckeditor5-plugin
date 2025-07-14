@@ -32,6 +32,7 @@ const DEFAULT_CONFIG: EditorConfig = {
 	],
 	heading: {
 		options: [
+            { model: 'paragraph', title: 'Format', class: 'ck-heading_paragraph' },
 			{ model: 'headingLegal', view: { name: 'p', classes: 'legal-text' }, title: 'Legal', class: 'ck-heading_legal' },
 			{ model: 'headingSmall', view: { name: 'p', classes: 'small-text' }, title: 'Small', class: 'ck-heading_small' }
 		]
